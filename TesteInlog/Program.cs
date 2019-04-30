@@ -64,13 +64,6 @@ namespace TesteInlog
 
             }
 
-            //_context.Veiculos.Add(new Onibus { Chassi = "abc", Cor = "azul", Tipo = TipoVeículo.Onibus });
-            //_context.Veiculos.Add(new Caminhao { Chassi = "def", Cor = "vermelho", Tipo = TipoVeículo.Caminhao });
-
-            //_context.SaveChanges();
-
-
-            //var a = _context.Veiculos.ToList();
             Console.WriteLine("Hello World!");
         }
 

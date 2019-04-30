@@ -8,10 +8,34 @@ namespace TesteInlog.Repositories
 {
     public interface IVeiculoRepository
     {
+        /// <summary>
+        /// Busca um veículo com base em um chassi informado
+        /// </summary>
+        /// <param name="chassi"></param>
+        /// <returns></returns>
         Veiculo BuscarVeiculo(string chassi);
+        /// <summary>
+        /// Persiste na base um veículo ou sua alteração
+        /// </summary>
+        /// <param name="veiculo"></param>
+        /// <returns></returns>
         bool InserirVeiculo(Veiculo veiculo);
+        /// <summary>
+        /// Retorna uma lista de todos os veículos cadastrados
+        /// </summary>
+        /// <returns></returns>
         List<Veiculo> ListarVeiculos();
+        /// <summary>
+        /// Verifica se já existe algum veículo com o chassi informado
+        /// </summary>
+        /// <param name="chassi"></param>
+        /// <returns></returns>
         bool VerificarVeiculoExistente(string chassi);
+        /// <summary>
+        /// Deleta veículos da base
+        /// </summary>
+        /// <param name="veiculo"></param>
+        /// <returns></returns>
         bool RemoveVeiculo(Veiculo veiculo);
     }
 
