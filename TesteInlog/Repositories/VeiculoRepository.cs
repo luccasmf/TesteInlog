@@ -51,21 +51,23 @@ namespace TesteInlog.Repositories
 
         public bool InserirVeiculo(Veiculo veiculo)
         {
-            if(_context.Veiculos.Any(x=>x.Chassi.Equals(veiculo.Chassi)))
-            {
-                _context.Entry(veiculo).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            }
+           
 
             _context.Veiculos.Add(veiculo);
 
             return _context.SaveChanges() > 0;
         }
 
-        /// <summary>
-        /// Verifica se o já existe um veículo com o chassi informado
-        /// </summary>
-        /// <param name="chassi"></param>
-        /// <returns></returns>
+        public bool EditarVeiculo(Veiculo veiculo)
+        {
+            if (_context.Veiculos.Any(x => x.Chassi.Equals(veiculo.Chassi)))
+            {
+                _context.Entry(veiculo).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            }
+
+            return _context.SaveChanges() > 0;
+        }
+
         public bool VerificarVeiculoExistente(string chassi)
         {
             return _context.Veiculos.Where(x => x.Chassi.Equals(chassi)).Any();

@@ -10,7 +10,7 @@ namespace TesteInlog.Models
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseInMemoryDatabase("TestDB");
+            optionsBuilder.UseInMemoryDatabase("VeiculosDB");
         }
 
         public DbSet<Veiculo> Veiculos { get; set; }
